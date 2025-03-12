@@ -1,0 +1,7 @@
+w = 100, h = 40, x = 0, y = 0, automaton = game_of_life
+9o13b9o2b9o$9o13b9o2b9o$9o13b9o2b9o$3o3b3o13b3o8b3o3b3o$3o3b3o13b3o8b
+3o3b3o$3o3b3o13b3o8b3o3b3o$9o2b3o3b3o2b3o8b9o$9o2b3o3b3o2b3o8b9o$9o2b
+3o3b3o2b3o8b9o$3o8b3o3b3o2b3o8b3o3b3o$3o8b3o3b3o2b3o8b3o3b3o$3o8b3o3b
+3o2b3o8b3o3b3o$3o8b3o3b3o2b3o8b3o3b3o$3o8b3o3b3o2b3o8b3o3b3o$3o8b9o2b
+9o2b3o3b3o$3o8b9o2b9o2b3o3b3o$3o8b9o2b9o2b3o3b3o$17b3o$17b3o$17b3o$17b
+3o$17b3o$17b3o$17b3o!

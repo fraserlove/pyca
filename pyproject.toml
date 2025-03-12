@@ -1,0 +1,20 @@
+[build-system]
+requires = ['hatchling']
+build-backend = 'hatchling.build'
+
+[project]
+name = 'pyca'
+dynamic = ['version']
+readme = 'README.md'
+authors = [{name = 'Fraser Love', email = 'me@fraser.love'}]
+dependencies = [
+    'pygame~=2.6.0',
+    'numpy~=2.1.0',
+]
+requires-python = '>=3.10'
+
+[project.scripts]
+pyca = 'pyca.cli:app'
+
+[tool.hatch.version]
+path = 'pyca/__init__.py'
