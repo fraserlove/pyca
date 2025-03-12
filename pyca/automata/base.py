@@ -1,4 +1,3 @@
-import time
 import pygame
 from typing import Generator, Tuple
 
@@ -56,7 +55,6 @@ class Automaton:
         pygame.display.flip()
     
     def run_simulation(self) -> None:
-        x = 0
         while True:
             if self.frame_rate:
                 self.clock.tick(self.frame_rate)
@@ -74,8 +72,6 @@ class Automaton:
                         # Advance one step when right arrow is pressed while paused
                         self.next_generation()
                         self.draw_grid()
-            pygame.image.save(self.display, f'examples/images/gif/{self.__class__.__name__}_{x:04}.png')
-            x += 1
             
             self.draw_grid()
             

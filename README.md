@@ -68,7 +68,6 @@ Note that the grid is wrapped by default, so a layer of padding is suggested aro
 `SPACE` key toggles pause/play.
 `RIGHT ARROW` key advances one generation when paused.
 `ESC` key quits the simulation.
-`S` key saves the current frame as an image.
 
 ## Examples
 
