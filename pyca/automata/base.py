@@ -1,13 +1,14 @@
 import pygame
 from typing import Generator, Tuple
 
-from ..parsers import find_parser
+from ..parser import Parser
 
 class Automaton:
     def __init__(self, name: str, file_path: str = None, grid_dims: Tuple[int, int] = None, cell_size: int = None, frame_rate: int = None):
+        self.name = name
         self.cell_size = cell_size
         self.frame_rate = frame_rate
-        self.paused = False
+        self.paused = True
 
         if file_path:
             self.import_grid(file_path)
@@ -17,13 +18,13 @@ class Automaton:
         pygame.init()
         self.display = pygame.display.set_mode((len(self.grid) * self.cell_size, len(self.grid[0]) * self.cell_size))
         self.clock = pygame.time.Clock()
-        pygame.display.set_caption(name)
+        pygame.display.set_caption('PyCA')
     
     def init_grid(self, grid_dims: Tuple[int, int]) -> None:
         self.grid = [[0 for _ in range(grid_dims[1])] for _ in range(grid_dims[0])]
     
     def import_grid(self, file_path: str) -> None:
-        parser = find_parser(file_path)
+        parser = Parser()
         self.grid = parser.load(file_path)
 
     def next_generation(self) -> None:
@@ -81,7 +82,7 @@ class Automaton:
     @classmethod
     def from_file(cls, file_path: str, cell_size: int = 8, frame_rate: int = 30) -> 'Automaton':
         """Factory method to create the appropriate automaton from an RLE file"""
-        parser = find_parser(file_path)
+        parser = Parser()
         grid = parser.load(file_path)
         
         # Get the automaton type from the parser

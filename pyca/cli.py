@@ -3,7 +3,7 @@ from typing import Optional
 from pathlib import Path
 
 from pyca import __version__
-from pyca.automata import Automaton, GameOfLife, LangtonsAnt, PredatorPrey, BriansBrain, WireWorld
+from pyca.automata import *
 
 app = typer.Typer()
 
@@ -40,7 +40,7 @@ def main(
     list: bool = typer.Option(False, '--list', '-l', callback=list_callback, help='List available automata.')
 ):
     # Check if the argument is a file path
-    if automaton.endswith('.rle'):
+    if Path(automaton).exists():
         try:
             simulation = Automaton.from_file(
                 automaton,
@@ -49,7 +49,7 @@ def main(
             )
             return
         except Exception as e:
-            typer.echo(f'Error loading RLE file: {e}')
+            typer.echo(f'Error loading {automaton}: {e}')
             raise typer.Exit(1)
 
     # If not a file, treat as automaton type
