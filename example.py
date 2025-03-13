@@ -5,4 +5,4 @@ if __name__ == '__main__':
     GameOfLife()
 
     # Create and run a instance of Wire World from a RLE file
-    WireWorld('examples/wire_world/circuit.rle')
+    WireWorld('grids/wire_world/circuit.ca')
